@@ -1,2 +1,5 @@
 # 100days_of_Javascript_Template
-Ready to Rage , ......... 
+#Counter app 
+#styles.css
+#script.js
+#index.html
