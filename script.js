@@ -1,26 +1,27 @@
-const up  = document.querySelector(".up");
-const reset  = document.querySelector(".reset");
-const down = document.querySelector(".down");
-const count = document.querySelector(".count");
+const count = document.querySelector('.count');
+const buttons = document.querySelector('.buttons');
 
+const setColor = () => {
+  if (count.innerHTML > 0) {
+    count.style.color = 'orange';
+  } else if (count.innerHTML < 0) {
+    count.style.color = 'pink';
+  } else {
+    count.style.color = 'white';
+  }
+};
 
-
-
-up.addEventListener("click",()=>{
-   count.innerHTML++; 
-   count.style.color="orange"
-});
-
-
-down.addEventListener("click",()=>{
-    count.innerHTML--; 
-    count.style.color="pink"
-})
-
-reset.addEventListener("click",()=>{
+buttons.addEventListener('click', (e) => {
+  if (e.target.classList.contains('up')) {
+    count.innerHTML++;
+    setColor();
+  }
+  if (e.target.classList.contains('down')) {
+    count.innerHTML--;
+    setColor();
+  }
+  if (e.target.classList.contains('reset')) {
     count.innerHTML = 0;
-    count.style.color="white"
-    
-})
-
-
+    setColor();
+  }
+});
